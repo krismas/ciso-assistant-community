@@ -6,6 +6,7 @@ from core.models import FilteringLabelMixin, I18nObjectMixin, ReferentialObjectM
 from core.base_models import NameDescriptionMixin, AbstractBaseModel
 from core.constants import COUNTRY_CHOICES
 from django.db.models import Count
+from django.utils.translation import gettext_lazy as _
 
 
 class NameDescriptionFolderMixin(NameDescriptionMixin, FolderMixin):
@@ -15,41 +16,41 @@ class NameDescriptionFolderMixin(NameDescriptionMixin, FolderMixin):
 
 LEGAL_BASIS_CHOICES = (
     # Article 6(1) Legal Bases
-    ("consent", "Consent"),
-    ("contract", "Performance of a Contract"),
-    ("legal_obligation", "Compliance with a Legal Obligation"),
-    ("vital_interests", "Protection of Vital Interests"),
-    ("public_interest", "Performance of a Task in the Public Interest"),
-    ("legitimate_interests", "Legitimate Interests"),
+    ("consent", _("Consent")),
+    ("contract", _("Performance of a Contract")),
+    ("legal_obligation", _("Compliance with a Legal Obligation")),
+    ("vital_interests", _("Protection of Vital Interests")),
+    ("public_interest", _("Performance of a Task in the Public Interest")),
+    ("legitimate_interests", _("Legitimate Interests")),
     # Special Category Processing - Article 9(2)
-    ("explicit_consent", "Explicit Consent for Special Categories"),
-    ("employment_social_security", "Employment and Social Security Law"),
+    ("explicit_consent", _("Explicit Consent for Special Categories")),
+    ("employment_social_security", _("Employment and Social Security Law")),
     (
         "vital_interests_incapacity",
         "Vital Interests (Subject Physically/Legally Incapable)",
     ),
-    ("nonprofit_organization", "Processing by Nonprofit Organization"),
-    ("public_data", "Data Manifestly Made Public by the Data Subject"),
-    ("legal_claims", "Establishment, Exercise or Defense of Legal Claims"),
-    ("substantial_public_interest", "Substantial Public Interest"),
-    ("preventive_medicine", "Preventive or Occupational Medicine"),
-    ("public_health", "Public Health"),
-    ("archiving_research", "Archiving, Research or Statistical Purposes"),
+    ("nonprofit_organization", _("Processing by Nonprofit Organization")),
+    ("public_data", _("Data Manifestly Made Public by the Data Subject")),
+    ("legal_claims", _("Establishment, Exercise or Defense of Legal Claims")),
+    ("substantial_public_interest", _("Substantial Public Interest")),
+    ("preventive_medicine", _("Preventive or Occupational Medicine")),
+    ("public_health", _("Public Health")),
+    ("archiving_research", _("Archiving, Research or Statistical Purposes")),
     # Additional GDPR Bases
-    ("child_consent", "Child's Consent with Parental Authorization"),
-    ("data_transfer_adequacy", "Transfer Based on Adequacy Decision"),
-    ("data_transfer_safeguards", "Transfer Subject to Appropriate Safeguards"),
-    ("data_transfer_binding_rules", "Transfer Subject to Binding Corporate Rules"),
+    ("child_consent", _("Child's Consent with Parental Authorization")),
+    ("data_transfer_adequacy", _("Transfer Based on Adequacy Decision")),
+    ("data_transfer_safeguards", _("Transfer Subject to Appropriate Safeguards")),
+    ("data_transfer_binding_rules", _("Transfer Subject to Binding Corporate Rules")),
     (
         "data_transfer_derogation",
         "Transfer Based on Derogation for Specific Situations",
     ),
     # Common Combined Bases
-    ("consent_and_contract", "Consent and Contract"),
-    ("contract_and_legitimate_interests", "Contract and Legitimate Interests"),
+    ("consent_and_contract", _("Consent and Contract")),
+    ("contract_and_legitimate_interests", _("Contract and Legitimate Interests")),
     # Other
-    ("not_applicable", "Not Applicable"),
-    ("other", "Other Legal Basis (Specify in Description)"),
+    ("not_applicable", _("Not Applicable")),
+    ("other", _("Other Legal Basis (Specify in Description)")),
 )
 
 
@@ -142,80 +143,80 @@ class Purpose(NameDescriptionFolderMixin):
 
 class PersonalData(NameDescriptionFolderMixin):
     DELETION_POLICY_CHOICES = (
-        ("automatic_deletion", "Automatic Deletion"),
-        ("anonymization", "Anonymization"),
-        ("manual_review_deletion", "Manual Review Deletion"),
-        ("user_requested_deletion", "User Requested Deletion"),
-        ("legal_regulatory_hold", "Legal/Regulatory Hold"),
-        ("partial_deletion", "Partial Deletion"),
+        ("automatic_deletion", _("Automatic Deletion")),
+        ("anonymization", _("Anonymization")),
+        ("manual_review_deletion", _("Manual Review Deletion")),
+        ("user_requested_deletion", _("User Requested Deletion")),
+        ("legal_regulatory_hold", _("Legal/Regulatory Hold")),
+        ("partial_deletion", _("Partial Deletion")),
     )
     PERSONAL_DATA_CHOICES = (
         # Basic Identity Information
-        ("basic_identity", "Basic Identity Information"),
-        ("name", "Name"),
-        ("identification_numbers", "Identification Numbers"),
-        ("online_identifiers", "Online Identifiers"),
-        ("location_data", "Location Data"),
+        ("basic_identity", _("Basic Identity Information")),
+        ("name", _("Name")),
+        ("identification_numbers", _("Identification Numbers")),
+        ("online_identifiers", _("Online Identifiers")),
+        ("location_data", _("Location Data")),
         # Contact Information
-        ("contact_details", "Contact Details"),
-        ("address", "Address"),
-        ("email", "Email Address"),
-        ("phone_number", "Phone Number"),
+        ("contact_details", _("Contact Details")),
+        ("address", _("Address")),
+        ("email", _("Email Address")),
+        ("phone_number", _("Phone Number")),
         # Financial Information
-        ("financial_data", "Financial Data"),
-        ("bank_account", "Bank Account Information"),
-        ("payment_card", "Payment Card Information"),
-        ("transaction_history", "Transaction History"),
-        ("salary_information", "Salary Information"),
+        ("financial_data", _("Financial Data")),
+        ("bank_account", _("Bank Account Information")),
+        ("payment_card", _("Payment Card Information")),
+        ("transaction_history", _("Transaction History")),
+        ("salary_information", _("Salary Information")),
         # Special Categories of Personal Data (Sensitive)
-        ("health_data", "Health Data"),
-        ("genetic_data", "Genetic Data"),
-        ("biometric_data", "Biometric Data"),
-        ("racial_ethnic_origin", "Racial or Ethnic Origin"),
-        ("political_opinions", "Political Opinions"),
-        ("religious_beliefs", "Religious or Philosophical Beliefs"),
-        ("trade_union_membership", "Trade Union Membership"),
-        ("sexual_orientation", "Sexual Orientation"),
-        ("sex_life_data", "Sex Life Data"),
+        ("health_data", _("Health Data")),
+        ("genetic_data", _("Genetic Data")),
+        ("biometric_data", _("Biometric Data")),
+        ("racial_ethnic_origin", _("Racial or Ethnic Origin")),
+        ("political_opinions", _("Political Opinions")),
+        ("religious_beliefs", _("Religious or Philosophical Beliefs")),
+        ("trade_union_membership", _("Trade Union Membership")),
+        ("sexual_orientation", _("Sexual Orientation")),
+        ("sex_life_data", _("Sex Life Data")),
         # Digital Behavior and Activities
-        ("browsing_history", "Browsing History"),
-        ("search_history", "Search History"),
-        ("cookies", "Cookies Data"),
-        ("device_information", "Device Information"),
-        ("ip_address", "IP Address"),
-        ("user_behavior", "User Behavior"),
+        ("browsing_history", _("Browsing History")),
+        ("search_history", _("Search History")),
+        ("cookies", _("Cookies Data")),
+        ("device_information", _("Device Information")),
+        ("ip_address", _("IP Address")),
+        ("user_behavior", _("User Behavior")),
         # Professional Data
-        ("employment_details", "Employment Details"),
-        ("education_history", "Education History"),
-        ("professional_qualifications", "Professional Qualifications"),
-        ("work_performance", "Work Performance Data"),
+        ("employment_details", _("Employment Details")),
+        ("education_history", _("Education History")),
+        ("professional_qualifications", _("Professional Qualifications")),
+        ("work_performance", _("Work Performance Data")),
         # Social Relationships
-        ("family_details", "Family Details"),
-        ("social_network", "Social Network"),
-        ("lifestyle_information", "Lifestyle Information"),
+        ("family_details", _("Family Details")),
+        ("social_network", _("Social Network")),
+        ("lifestyle_information", _("Lifestyle Information")),
         # Communication Data
-        ("correspondence", "Correspondence Content"),
-        ("messaging_content", "Messaging Content"),
-        ("communication_metadata", "Communication Metadata"),
+        ("correspondence", _("Correspondence Content")),
+        ("messaging_content", _("Messaging Content")),
+        ("communication_metadata", _("Communication Metadata")),
         # Government/Official Data
-        ("government_identifiers", "Government Identifiers"),
-        ("tax_information", "Tax Information"),
-        ("social_security", "Social Security Information"),
-        ("drivers_license", "Driver's License Information"),
-        ("passport_information", "Passport Information"),
+        ("government_identifiers", _("Government Identifiers")),
+        ("tax_information", _("Tax Information")),
+        ("social_security", _("Social Security Information")),
+        ("drivers_license", _("Driver's License Information")),
+        ("passport_information", _("Passport Information")),
         # Legal Data
-        ("legal_records", "Legal Records"),
-        ("criminal_records", "Criminal Records"),
-        ("judicial_data", "Judicial Data"),
+        ("legal_records", _("Legal Records")),
+        ("criminal_records", _("Criminal Records")),
+        ("judicial_data", _("Judicial Data")),
         # Preferences and Opinions
-        ("preferences", "Preferences"),
-        ("opinions", "Opinions"),
-        ("feedback", "Feedback"),
+        ("preferences", _("Preferences")),
+        ("opinions", _("Opinions")),
+        ("feedback", _("Feedback")),
         # Other Types
-        ("images_photos", "Images and Photos"),
-        ("voice_recordings", "Voice Recordings"),
-        ("video_recordings", "Video Recordings"),
-        ("other", "Other Personal Data"),
+        ("images_photos", _("Images and Photos")),
+        ("voice_recordings", _("Voice Recordings")),
+        ("video_recordings", _("Video Recordings")),
+        ("other", _("Other Personal Data")),
     )
 
     processing = models.ForeignKey(
@@ -262,21 +263,21 @@ class PersonalData(NameDescriptionFolderMixin):
 class DataSubject(NameDescriptionFolderMixin):
     CATEGORY_CHOICES = (
         # Core Categories
-        ("customer", "Customer/Client"),
-        ("prospect", "Prospective Customer/Client"),
-        ("employee", "Employee"),
-        ("job_applicant", "Job Applicant"),
-        ("contractor", "Contractor/Vendor"),
-        ("business_partner", "Business Partner"),
+        ("customer", _("Customer/Client")),
+        ("prospect", _("Prospective Customer/Client")),
+        ("employee", _("Employee")),
+        ("job_applicant", _("Job Applicant")),
+        ("contractor", _("Contractor/Vendor")),
+        ("business_partner", _("Business Partner")),
         # Website/Service Users
-        ("user", "Website/App User"),
-        ("visitor", "Visitor"),
+        ("user", _("Website/App User")),
+        ("visitor", _("Visitor")),
         # Special Categories
-        ("minor", "Child/Minor"),
-        ("vulnerable", "Vulnerable Person"),
+        ("minor", _("Child/Minor")),
+        ("vulnerable", _("Vulnerable Person")),
         # Others
-        ("public", "General Public"),
-        ("other", "Other Data Subject Category"),
+        ("public", _("General Public")),
+        ("other", _("Other Data Subject Category")),
     )
 
     processing = models.ForeignKey(
@@ -292,41 +293,41 @@ class DataSubject(NameDescriptionFolderMixin):
 class DataRecipient(NameDescriptionFolderMixin):
     CATEGORY_CHOICES = (
         # Internal Recipients
-        ("internal_team", "Internal Team/Department"),
-        ("employee", "Employee"),
-        ("subsidiary", "Subsidiary Company"),
-        ("parent_company", "Parent Company"),
-        ("affiliated_entity", "Affiliated Entity"),
+        ("internal_team", _("Internal Team/Department")),
+        ("employee", _("Employee")),
+        ("subsidiary", _("Subsidiary Company")),
+        ("parent_company", _("Parent Company")),
+        ("affiliated_entity", _("Affiliated Entity")),
         # External Service Providers
-        ("service_provider", "Service Provider"),
-        ("data_processor", "Data Processor"),
-        ("cloud_provider", "Cloud Service Provider"),
-        ("it_provider", "IT Service Provider"),
-        ("marketing_agency", "Marketing Agency"),
-        ("payment_processor", "Payment Processor"),
-        ("analytics_provider", "Analytics Provider"),
+        ("service_provider", _("Service Provider")),
+        ("data_processor", _("Data Processor")),
+        ("cloud_provider", _("Cloud Service Provider")),
+        ("it_provider", _("IT Service Provider")),
+        ("marketing_agency", _("Marketing Agency")),
+        ("payment_processor", _("Payment Processor")),
+        ("analytics_provider", _("Analytics Provider")),
         # Business Partners
-        ("business_partner", "Business Partner"),
-        ("distributor", "Distributor"),
-        ("reseller", "Reseller"),
-        ("supplier", "Supplier"),
-        ("contractor", "Contractor"),
+        ("business_partner", _("Business Partner")),
+        ("distributor", _("Distributor")),
+        ("reseller", _("Reseller")),
+        ("supplier", _("Supplier")),
+        ("contractor", _("Contractor")),
         # Professional Services
-        ("legal_advisor", "Legal Advisor"),
-        ("accountant", "Accountant"),
-        ("consultant", "Consultant"),
-        ("auditor", "Auditor"),
+        ("legal_advisor", _("Legal Advisor")),
+        ("accountant", _("Accountant")),
+        ("consultant", _("Consultant")),
+        ("auditor", _("Auditor")),
         # Authorities
-        ("regulatory_authority", "Regulatory Authority"),
-        ("tax_authority", "Tax Authority"),
-        ("law_enforcement", "Law Enforcement"),
-        ("government_entity", "Government Entity"),
-        ("court", "Court"),
+        ("regulatory_authority", _("Regulatory Authority")),
+        ("tax_authority", _("Tax Authority")),
+        ("law_enforcement", _("Law Enforcement")),
+        ("government_entity", _("Government Entity")),
+        ("court", _("Court")),
         # Others
-        ("joint_controller", "Joint Controller"),
-        ("individual_recipient", "Individual Recipient"),
-        ("public", "Public Disclosure"),
-        ("other", "Other Recipient Category"),
+        ("joint_controller", _("Joint Controller")),
+        ("individual_recipient", _("Individual Recipient")),
+        ("public", _("Public Disclosure")),
+        ("other", _("Other Recipient Category")),
     )
 
     processing = models.ForeignKey(
@@ -341,11 +342,11 @@ class DataRecipient(NameDescriptionFolderMixin):
 
 class DataContractor(NameDescriptionFolderMixin):
     RELATIONSHIP_TYPE_CHOICES = (
-        ("data_processor", "Data Processor"),
-        ("sub_processor", "Sub-processor"),
-        ("joint_controller", "Joint Controller"),
-        ("independent_controller", "Independent Controller"),
-        ("other", "Other Relationship Type"),
+        ("data_processor", _("Data Processor")),
+        ("sub_processor", _("Sub-processor")),
+        ("joint_controller", _("Joint Controller")),
+        ("independent_controller", _("Independent Controller")),
+        ("other", _("Other Relationship Type")),
     )
     processing = models.ForeignKey(
         Processing, on_delete=models.CASCADE, related_name="contractors_involved"
