@@ -27,7 +27,7 @@ LEGAL_BASIS_CHOICES = (
     ("employment_social_security", _("Employment and Social Security Law")),
     (
         "vital_interests_incapacity",
-        "Vital Interests (Subject Physically/Legally Incapable)",
+        _("Vital Interests (Subject Physically/Legally Incapable)"),
     ),
     ("nonprofit_organization", _("Processing by Nonprofit Organization")),
     ("public_data", _("Data Manifestly Made Public by the Data Subject")),
@@ -43,7 +43,7 @@ LEGAL_BASIS_CHOICES = (
     ("data_transfer_binding_rules", _("Transfer Subject to Binding Corporate Rules")),
     (
         "data_transfer_derogation",
-        "Transfer Based on Derogation for Specific Situations",
+        _("Transfer Based on Derogation for Specific Situations"),
     ),
     # Common Combined Bases
     ("consent_and_contract", _("Consent and Contract")),
